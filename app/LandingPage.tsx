@@ -184,7 +184,7 @@ export default function LandingPage() {
               <a href="#projects" className="btn-one btn-ghost" onClick={smoothScroll}><span>See Recent Work</span></a>
             </div>
           </div>
-          <div className="hero-formbox rv">
+          <div className="hero-formbox rv" id="contact">
             <div className="hfb-head">
               <span className="eyebrow">Free Assessment</span>
               <h3>See If Your Roof Qualifies</h3>
@@ -396,58 +396,6 @@ export default function LandingPage() {
                 <strong><i className="fas fa-user-tie" /> Michael Hartman</strong>
                 <span>Property Manager &middot; [City] Commercial Office Park</span>
               </cite>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ QUALIFY — BENTO GRID ═══ */}
-      <section id="contact" className="qualify">
-        <div className="wrap">
-          <div className="bento">
-            <div className="bt bt-title rv">
-              <span className="eyebrow">Start Here</span>
-              <h2>Wondering If Your Roof<br />Qualifies for Coating?</h2>
-              <p>Takes 30 seconds. We'll send a written report and fixed-price quote within 24 hours — no obligation.</p>
-            </div>
-
-            <div className="bt bt-stat bt-stat-dark rv">
-              <div className="bt-n">$127K</div>
-              <div className="bt-l">Avg. Project Savings</div>
-            </div>
-
-            <div className="bt bt-stat bt-stat-primary rv">
-              <div className="bt-n">1,200<span>+</span></div>
-              <div className="bt-l">Commercial Roofs Coated</div>
-            </div>
-
-            <div className="bt bt-reviews rv">
-              <div className="bt-stars"><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
-              <div className="bt-reviews-n"><strong>4.9 / 5</strong> &middot; 127 Google Reviews</div>
-            </div>
-
-            <div className="bt bt-form rv">
-              <iframe
-                id="JotFormIFrame-261093407189057-1"
-                title="Free Roof Coating Assessment"
-                allow="geolocation; microphone; camera; fullscreen"
-                src="https://form.jotform.com/261093407189057"
-                className="jotform-frame"
-                scrolling="no"
-              ></iframe>
-            </div>
-
-            <div className="bt bt-warranty rv">
-              <div className="bt-warranty-icon"><i className="fas fa-shield-alt"></i></div>
-              <div>
-                <div className="bt-warranty-n">Up to 20-Year</div>
-                <div className="bt-warranty-l">Manufacturer Warranty &middot; Transferable on Sale</div>
-              </div>
-            </div>
-
-            <div className="bt bt-speed rv">
-              <div className="bt-speed-icon"><i className="fas fa-bolt"></i></div>
-              <div className="bt-speed-txt"><strong>1–3 Day Install</strong><span>Zero tenant disruption</span></div>
             </div>
           </div>
         </div>
