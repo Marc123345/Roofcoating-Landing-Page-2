@@ -166,12 +166,29 @@ export default function LandingPage() {
           />
         ))}
         <div className="hero-overlay" />
-        <div className="wrap hero-content">
-          <h1 className="rv">Add 10–20 Years to Your Roof<br />— Skip the Replacement</h1>
-          <p className="rv">Smart commercial owners coat. Manufacturer-backed silicone seals leaks, reflects heat, and cuts energy bills — without a single day of tear-off.</p>
-          <div className="hero-ctas rv">
-            <a href="#contact" className="btn-one" onClick={smoothScroll}><span>See If You Qualify</span></a>
-            <a href="#services" className="btn-one btn-ghost" onClick={smoothScroll}><span>How It Works</span></a>
+        <div className="wrap hero-grid">
+          <div className="hero-text rv">
+            <h1>Add 10–20 Years to Your Roof<br />— Skip the Replacement</h1>
+            <p>Smart commercial owners coat. Manufacturer-backed silicone seals leaks, reflects heat, and cuts energy bills — without a single day of tear-off.</p>
+            <div className="hero-ctas">
+              <a href="#services" className="btn-one" onClick={smoothScroll}><span>How It Works</span></a>
+              <a href="#projects" className="btn-one btn-ghost" onClick={smoothScroll}><span>See Recent Work</span></a>
+            </div>
+          </div>
+          <div className="hero-formbox rv">
+            <div className="hfb-head">
+              <span className="eyebrow">Free Assessment</span>
+              <h3>See If Your Roof Qualifies</h3>
+              <p>30-second form · Report + quote within 24 hrs</p>
+            </div>
+            <iframe
+              id="JotFormIFrame-261093407189057-hero"
+              title="Free Roof Coating Assessment"
+              allow="geolocation; microphone; camera; fullscreen"
+              src="https://form.jotform.com/261093407189057"
+              className="jotform-frame"
+              scrolling="no"
+            ></iframe>
           </div>
         </div>
         <div className="hero-dots">
