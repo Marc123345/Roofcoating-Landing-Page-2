@@ -86,6 +86,15 @@ export default function LandingPage() {
     };
   }, []);
 
+  const galleryRef = useRef<HTMLDivElement | null>(null);
+  const scrollGallery = (dir: -1 | 1) => {
+    const track = galleryRef.current;
+    if (!track) return;
+    const slide = track.querySelector(".wc-slide") as HTMLElement | null;
+    const delta = slide ? slide.offsetWidth + 14 : 320;
+    track.scrollBy({ left: delta * dir, behavior: "smooth" });
+  };
+
   const smoothScroll = (e: MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute("href");
     if (href && href.startsWith("#")) {
@@ -259,33 +268,33 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══ SERVICES (Benefits) ═══ */}
-      <section id="services" className="services">
+      {/* ═══ BENEFITS — 6 dark navy cards ═══ */}
+      <section id="services" className="benefits-s">
         <div className="wrap">
           <div className="sec-title center rv">
             <span className="eyebrow">Why Owners Choose Coating</span>
             <h2>Save More. Wait Less.<br />Cover Every Risk.</h2>
           </div>
-          <div className="services-grid">
+          <div className="benefits-grid">
             {[
-              { icon: "fa-dollar-sign", title: "Save Up to 75%", body: "Replacement runs $8–$14/sq ft. Coating runs $3–$5. On a 20,000 sq ft roof, that's $100K+ kept in your pocket.", img: "https://ik.imagekit.io/qcvroy8xpd/34.png" },
-              { icon: "fa-shield-alt", title: "20-Year Warranty", body: "Manufacturer-backed coverage — transferable on sale. Not a handshake. A document.", img: "https://ik.imagekit.io/qcvroy8xpd/20.png" },
-              { icon: "fa-bolt", title: "1–3 Day Install", body: "Zero tear-off. Zero tenant disruption. Your operation runs while we restore the roof.", img: "https://ik.imagekit.io/qcvroy8xpd/35.png" },
-            ].map((s, i) => (
-              <div key={i} className="service-card rv">
-                <div className="sc-img" style={{ backgroundImage: `url('${s.img}')` }} />
-                <div className="sc-body">
-                  <div className="sc-icon"><i className={`fas ${s.icon}`}></i></div>
-                  <h3>{s.title}</h3>
-                  <p>{s.body}</p>
-                  <a href="#contact" className="sc-link" onClick={smoothScroll}>
-                    <i className="fas fa-arrow-right"></i>
-                  </a>
+              { icon: "fa-dollar-sign", title: "Save 50–75% vs. Replacement", body: "Average replacement: $8–$14/sq ft. Coating: $3–$5. On a 20,000 sq ft roof, that's $100K+ saved." },
+              { icon: "fa-volume-mute", title: "Zero Business Disruption", body: "No tear-off. No noise. No closed parking. Tenants won't know we're there." },
+              { icon: "fa-shield-alt", title: "15–20 Year Manufacturer Warranty", body: "Backed by the manufacturer, not just our word. Transferable for property sales." },
+              { icon: "fa-thermometer-quarter", title: "Energy Cost Reduction", body: "Reflective coatings cut rooftop temps by up to 60°F. Cooling costs drop 15–25%." },
+              { icon: "fa-leaf", title: "Environmentally Responsible", body: "Keep 20+ tons of roofing material out of the landfill. Coating restores — doesn't replace." },
+              { icon: "fa-clock", title: "Installed in 1–3 Days", body: "Most commercial roofs fully coated in 1–3 working days. Leak-free by end of week." },
+            ].map((b, i) => (
+              <div key={i} className="benefit-card rv">
+                <div className="bc-icon-wrap">
+                  <div className="bc-icon-ring" />
+                  <div className="bc-icon"><i className={`fas ${b.icon}`}></i></div>
                 </div>
+                <h3>{b.title}</h3>
+                <p>{b.body}</p>
               </div>
             ))}
           </div>
-          <div className="center rv">
+          <div className="center rv" style={{ marginTop: 40 }}>
             <a href="#contact" className="btn-one" onClick={smoothScroll}><span>Get Your Free Report</span></a>
           </div>
         </div>
@@ -341,50 +350,53 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══ RECENT PROJECTS ═══ */}
-      <section id="projects" className="team">
+      {/* ═══ RECENT WORK — swipeable carousel ═══ */}
+      <section id="projects" className="work-carousel-s">
         <div className="wrap">
           <div className="sec-title center rv">
             <span className="eyebrow">Recent Work</span>
             <h2>Projects Restored<br />This Year</h2>
           </div>
-          <div className="projects-gallery">
-            {projectImages.map((file, i) => (
-              <div key={i} className="proj-card rv">
-                <img src={`https://ik.imagekit.io/qcvroy8xpd/${file}`} alt="Commercial roof coating project" loading="lazy" />
-              </div>
-            ))}
+          <div className="work-carousel">
+            <button className="wc-nav wc-prev" onClick={() => scrollGallery(-1)} aria-label="Previous projects" type="button"><i className="fas fa-chevron-left"></i></button>
+            <div className="wc-track" ref={galleryRef}>
+              {projectImages.map((file, i) => (
+                <div key={i} className="wc-slide">
+                  <img src={`https://ik.imagekit.io/qcvroy8xpd/${file}`} alt="Commercial roof coating project" loading="lazy" />
+                </div>
+              ))}
+            </div>
+            <button className="wc-nav wc-next" onClick={() => scrollGallery(1)} aria-label="Next projects" type="button"><i className="fas fa-chevron-right"></i></button>
           </div>
         </div>
       </section>
 
-      {/* ═══ BLOG / INSIGHTS ═══ */}
-      <section id="blog" className="blog">
+      {/* ═══ CASE STUDY ═══ */}
+      <section id="blog" className="case-s">
         <div className="wrap">
           <div className="sec-title center rv">
-            <span className="eyebrow">Owner Insights</span>
-            <h2>What Smart Commercial<br />Owners Are Reading</h2>
+            <span className="eyebrow eyebrow-light">Case Study</span>
+            <h2 className="h2-light">How One Property Manager<br />Saved <em>$127,000</em></h2>
           </div>
-          <div className="blog-grid">
-            {[
-              { date: "07 Dec", cat: "COATING", title: "When Coating Beats Tear-Off: A Decision Framework.", img: "https://ik.imagekit.io/qcvroy8xpd/22.png" },
-              { date: "12 Dec", cat: "ROI", title: "Silicone vs. Acrylic: Which System Pays Faster?", img: "https://ik.imagekit.io/qcvroy8xpd/37.png" },
-              { date: "18 Dec", cat: "WARRANTY", title: "10 Things to Verify Before Signing Your Coating Warranty.", img: "https://ik.imagekit.io/qcvroy8xpd/26.png" },
-            ].map((b, i) => (
-              <article key={i} className="blog-card rv">
-                <div className="bc-img" style={{ backgroundImage: `url('${b.img}')` }}>
-                  <div className="bc-date">{b.date}</div>
-                </div>
-                <div className="bc-body">
-                  <div className="bc-meta">
-                    <span>{b.cat}</span>
-                    <span>ROOF COAT</span>
-                  </div>
-                  <h3>{b.title}</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing sed do eiusmod tempor incididunt labore dolore.</p>
-                </div>
-              </article>
-            ))}
+          <div className="cs-grid">
+            <div className="cs-i rv"><div className="cs-lb">Building</div><div className="cs-v">45,000 ft²</div><div className="cs-sub">Commercial office</div></div>
+            <div className="cs-i rv"><div className="cs-lb">Replacement Quote</div><div className="cs-v">$189,000</div><div className="cs-sub">Full tear-off</div></div>
+            <div className="cs-i rv"><div className="cs-lb">Coating Cost</div><div className="cs-v">$62,000</div><div className="cs-sub">Silicone system</div></div>
+            <div className="cs-i rv"><div className="cs-lb">Total Saved</div><div className="cs-v hl">$127,000</div><div className="cs-sub">Zero leaks since</div></div>
+          </div>
+          <div className="cs-bottom">
+            <div className="cs-details rv">
+              <p><strong>The situation:</strong> 45,000 sq ft commercial office, 18-year-old flat TPO roof. Multiple leaks, interior damage. Replacement quote: $189,000.</p>
+              <p><strong>Our solution:</strong> Full silicone coating with complete surface prep. 20-year manufacturer warranty. Total: $62,000. Done in 4 days.</p>
+              <p className="cs-result"><strong>Result:</strong> $127,000 saved. Zero leaks in 3 years. Warranty transfers with sale.</p>
+            </div>
+            <div className="cs-quote rv">
+              <p>"We were ready to write a check for $189K. They saved us six figures and the roof has been bone dry since. I wish I'd called them first."</p>
+              <cite>
+                <strong><i className="fas fa-user-tie" /> Michael Hartman</strong>
+                <span>Property Manager &middot; [City] Commercial Office Park</span>
+              </cite>
+            </div>
           </div>
         </div>
       </section>
