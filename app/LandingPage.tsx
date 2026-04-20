@@ -107,7 +107,7 @@ export default function LandingPage() {
     { href: "#contact", label: "Contact" },
   ];
 
-  const projectImages = ["34.png", "20.png", "35.png", "22.png", "37.png", "26.png"];
+  const projectImages = ["34.png", "20.png", "35.png", "22.png", "37.png", "26.png", "30.png", "23.png", "29.png", "13.png"];
 
   return (
     <>
@@ -274,6 +274,34 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ═══ ROOF SYSTEMS WE COAT ═══ */}
+      <section id="roof-types" className="roof-types">
+        <div className="wrap">
+          <div className="sec-title center rv">
+            <span className="eyebrow">What We Coat</span>
+            <h2>Roof Systems We Restore</h2>
+            <p style={{ maxWidth: 620, margin: "14px auto 0", color: "var(--gray)" }}>If your commercial roof is one of these, coating is almost certainly the smarter decision.</p>
+          </div>
+          <div className="rt-grid">
+            {[
+              { icon: "fa-building", name: "TPO", desc: "Single-Ply Thermoplastic" },
+              { icon: "fa-industry", name: "EPDM", desc: "Synthetic Rubber Membrane" },
+              { icon: "fa-warehouse", name: "PVC", desc: "Durable Polyvinyl Membrane" },
+              { icon: "fa-layer-group", name: "Metal", desc: "Standing Seam & R-Panel" },
+              { icon: "fa-scroll", name: "Modified Bitumen", desc: "Asphalt-Based Membrane" },
+              { icon: "fa-stream", name: "Built-Up", desc: "Traditional Tar & Gravel" },
+            ].map((t, i) => (
+              <div key={i} className="rt-card rv">
+                <div className="rt-icon"><i className={`fas ${t.icon}`}></i></div>
+                <div className="rt-name">{t.name}</div>
+                <div className="rt-desc">{t.desc}</div>
+              </div>
+            ))}
+          </div>
+          <p className="rt-note rv">Not sure what you have? Send a photo when you book — we'll confirm during the inspection.</p>
+        </div>
+      </section>
+
       {/* ═══ FACT COUNTER ═══ */}
       <section className="facts">
         <div className="wrap">
@@ -300,14 +328,13 @@ export default function LandingPage() {
       <section id="projects" className="team">
         <div className="wrap">
           <div className="sec-title center rv">
-            <span className="eyebrow">Recent Before &amp; Afters</span>
-            <h2>Real Commercial Roofs.<br />Real Transformations.</h2>
+            <span className="eyebrow">Recent Work</span>
+            <h2>Projects Restored<br />This Year</h2>
           </div>
           <div className="projects-gallery">
             {projectImages.map((file, i) => (
               <div key={i} className="proj-card rv">
-                <img src={`https://ik.imagekit.io/qcvroy8xpd/${file}`} alt="Commercial roof before and after coating" loading="lazy" />
-                <span className="proj-tag">Before / After</span>
+                <img src={`https://ik.imagekit.io/qcvroy8xpd/${file}`} alt="Commercial roof coating project" loading="lazy" />
               </div>
             ))}
           </div>
