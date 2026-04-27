@@ -240,9 +240,6 @@ export default function LandingPage() {
             <em className="shock-highlight">75% less</em>{' '}
             than a full replacement.
           </p>
-          <a href="#contact" className="btn-one shock-cta" onClick={smoothScroll}>
-            <span>Find Out If You Qualify</span>
-          </a>
         </div>
       </section>
 
