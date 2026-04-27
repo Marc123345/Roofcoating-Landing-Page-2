@@ -198,10 +198,6 @@ export default function LandingPage() {
           <div className="hero-text rv">
             <h1>75% Less Than a<br /><em>Full Roof Replacement.</em></h1>
             <p>Smart commercial owners are coating, not replacing. Manufacturer-backed silicone seals every leak, slashes cooling bills 25%, and locks in a 20-year warranty — without one tear-off, one dumpster, or one disrupted tenant.</p>
-            <div className="hero-ctas">
-              <a href="#services" className="btn-one" onClick={smoothScroll}><span>How It Works</span></a>
-              <a href="#projects" className="btn-one btn-ghost" onClick={smoothScroll}><span>See Recent Work</span></a>
-            </div>
           </div>
           <div className="hero-formbox rv" id="contact">
             <div className="hfb-head">
