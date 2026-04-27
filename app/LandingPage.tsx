@@ -177,8 +177,8 @@ export default function LandingPage() {
         <div className="hero-overlay" />
         <div className="wrap hero-grid">
           <div className="hero-text rv">
-            <h1>Add 10–20 Years to Your Roof<br />— Skip the Replacement</h1>
-            <p>Smart commercial owners coat. Manufacturer-backed silicone seals leaks, reflects heat, and cuts energy bills — without a single day of tear-off.</p>
+            <h1>75% Less Than a<br /><em>Full Roof Replacement.</em></h1>
+            <p>Smart commercial owners are coating, not replacing. Manufacturer-backed silicone seals every leak, slashes cooling bills 25%, and locks in a 20-year warranty — without one tear-off, one dumpster, or one disrupted tenant.</p>
             <div className="hero-ctas">
               <a href="#services" className="btn-one" onClick={smoothScroll}><span>How It Works</span></a>
               <a href="#projects" className="btn-one btn-ghost" onClick={smoothScroll}><span>See Recent Work</span></a>
@@ -207,6 +207,28 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ═══ RECENT WORK — moved up under hero ═══ */}
+      <section id="projects" className="work-carousel-s">
+        <div className="wrap">
+          <div className="sec-title center rv">
+            <span className="eyebrow">Recent Work</span>
+            <h2>Real Roofs. Real Results.<br /><em>Restored This Year.</em></h2>
+            <p style={{ maxWidth: 640, margin: "14px auto 0", color: "var(--gray)" }}>1,200+ commercial roofs sealed and warrantied in the last 12 months. Zero tear-offs. Zero tenant disruption. Just bone-dry roofs and six-figure savings.</p>
+          </div>
+          <div className="work-carousel">
+            <button className="wc-nav wc-prev" onClick={() => scrollGallery(-1)} aria-label="Previous projects" type="button"><i className="fas fa-chevron-left"></i></button>
+            <div className="wc-track" ref={galleryRef}>
+              {projectImages.map((file, i) => (
+                <div key={i} className="wc-slide">
+                  <img src={`https://ik.imagekit.io/qcvroy8xpd/${file}`} alt="Commercial roof coating project" loading="lazy" />
+                </div>
+              ))}
+            </div>
+            <button className="wc-nav wc-next" onClick={() => scrollGallery(1)} aria-label="Next projects" type="button"><i className="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ ABOUT ═══ */}
       <section id="about" className="about">
         <div className="wrap">
@@ -224,9 +246,9 @@ export default function LandingPage() {
                 <span className="eyebrow">Why Coat, Not Replace</span>
                 <h2>The 20-Year Roof<br />Upgrade Smart Owners<br />Already Know About</h2>
               </div>
-              <p>Most commercial roofs don't need a tear-off. If the deck is structurally sound, a professional-grade silicone system seals every seam, blister, and pinhole — restoring the roof for decades at a fraction of replacement cost.</p>
-              <p>Our applications are backed by manufacturer warranties up to 20 years, transferable on sale, and installed in 1–3 working days without disturbing tenants or operations.</p>
-              <p>Over 1,200 commercial owners across 14 industries have already made the smarter decision. Here's your chance to skip the six-figure quote.</p>
+              <p>Most commercial roofs don't need a tear-off. If the deck is structurally sound, a professional-grade silicone system seals every seam, blister, and pinhole — restoring the roof for decades at a <strong>fraction of replacement cost</strong>.</p>
+              <p>Our applications are backed by manufacturer warranties up to <strong>20 years, transferable on sale</strong>, and installed in 1–3 working days. Tenants won't even know we were there.</p>
+              <p>Over <strong>1,200 commercial owners across 14 industries</strong> have already made the smarter decision. Here's your chance to skip the six-figure quote — and keep that money in your operating budget.</p>
               <div className="about-stats">
                 <div className="about-stat">
                   <div className="as-n"><span ref={(el) => { counterRefs.current[0] = el; }} data-stop="1200" data-speed="2500">0</span>+</div>
@@ -247,13 +269,13 @@ export default function LandingPage() {
         <div className="wrap">
           <div className="sec-title center rv">
             <span className="eyebrow">The Process</span>
-            <h2>Here's Exactly What Happens</h2>
+            <h2>Leaky Roof to <em>Bone-Dry</em><br />in 3 Days Flat</h2>
           </div>
           <div className="process-grid">
             {[
-              { n: "01", title: "Schedule an Inspection", body: "We inspect, measure, and confirm whether coating is right. Written report delivered same week." },
-              { n: "02", title: "Receive a Fixed Quote", body: "We recommend the right system — silicone, acrylic, or hybrid — based on roof, climate, and budget." },
-              { n: "03", title: "Enjoy a 20-Year Roof", body: "Certified crew cleans, primes, coats. You get manufacturer warranty docs and a bone-dry roof." },
+              { n: "01", title: "Free Inspection — No Pressure", body: "We inspect, measure, and tell you straight up if coating is right. Written report in your inbox same week. Zero obligation." },
+              { n: "02", title: "Fixed Quote — Zero Surprises", body: "Silicone, acrylic, or hybrid — we recommend the smartest system for your roof, climate, and budget. Locked-in price. No change orders." },
+              { n: "03", title: "Enjoy a 20-Year Bone-Dry Roof", body: "Certified crew cleans, primes, coats. You get manufacturer warranty docs in hand and the smartest decision you'll make this year." },
             ].map((p, i) => (
               <div key={i} className="process-card rv">
                 <div className="pc-num">{p.n}</div>
@@ -272,17 +294,17 @@ export default function LandingPage() {
       <section id="services" className="benefits-s">
         <div className="wrap">
           <div className="sec-title center rv">
-            <span className="eyebrow">Why Owners Choose Coating</span>
-            <h2>Save More. Wait Less.<br />Cover Every Risk.</h2>
+            <span className="eyebrow">Why Smart Owners Choose Coating</span>
+            <h2>The 20-Year Roof Upgrade<br /><em>Smart Owners</em> Already Know About</h2>
           </div>
           <div className="benefits-grid">
             {[
-              { icon: "fa-dollar-sign", title: "Save 50–75% vs. Replacement", body: "Average replacement: $8–$14/sq ft. Coating: $3–$5. On a 20,000 sq ft roof, that's $100K+ saved." },
-              { icon: "fa-volume-mute", title: "Zero Business Disruption", body: "No tear-off. No noise. No closed parking. Tenants won't know we're there." },
-              { icon: "fa-shield-alt", title: "15–20 Year Manufacturer Warranty", body: "Backed by the manufacturer, not just our word. Transferable for property sales." },
-              { icon: "fa-thermometer-quarter", title: "Energy Cost Reduction", body: "Reflective coatings cut rooftop temps by up to 60°F. Cooling costs drop 15–25%." },
-              { icon: "fa-leaf", title: "Environmentally Responsible", body: "Keep 20+ tons of roofing material out of the landfill. Coating restores — doesn't replace." },
-              { icon: "fa-clock", title: "Installed in 1–3 Days", body: "Most commercial roofs fully coated in 1–3 working days. Leak-free by end of week." },
+              { icon: "fa-dollar-sign", title: "Save Up To 75% — Period.", body: "Replacement: $8–$14/sq ft. Coating: $3–$5. On a 20,000 sq ft roof, you keep $100K+ in your pocket. Same waterproofing. Better warranty." },
+              { icon: "fa-volume-mute", title: "Zero Disruption — Tenants Won't Know", body: "No tear-off. No dumpsters. No closed parking. No noise. We're in and out before your tenants notice anything changed." },
+              { icon: "fa-shield-alt", title: "20-Year Manufacturer Warranty", body: "Backed in writing by the manufacturer — not a contractor handshake. Fully transferable when you sell the building." },
+              { icon: "fa-thermometer-quarter", title: "Cooling Bills Drop 25% — Day One", body: "Reflective coatings cut rooftop temps by up to 60°F. Your HVAC stops fighting the sun. Energy savings start the day we leave." },
+              { icon: "fa-leaf", title: "Keep 20+ Tons Out Of The Landfill", body: "Tear-offs send a mountain of debris to the dump. Coating restores what's already there — and your tenants love the green credentials." },
+              { icon: "fa-clock", title: "Bone-Dry In 3 Days Flat", body: "Most commercial roofs fully coated in 1–3 working days. Sealed, warrantied, and leak-free by the end of the week. No exceptions." },
             ].map((b, i) => (
               <div key={i} className="benefit-card rv">
                 <div className="bc-icon-wrap">
@@ -305,8 +327,8 @@ export default function LandingPage() {
         <div className="wrap">
           <div className="sec-title center rv">
             <span className="eyebrow">What We Coat</span>
-            <h2>Roof Systems We Restore</h2>
-            <p style={{ maxWidth: 620, margin: "14px auto 0", color: "var(--gray)" }}>If your commercial roof is one of these, coating is almost certainly the smarter decision.</p>
+            <h2>Every Roof System — <em>Restored</em>, Not Replaced</h2>
+            <p style={{ maxWidth: 640, margin: "14px auto 0", color: "var(--gray)" }}>If your commercial roof is one of these, coating is almost certainly the smarter decision — and we've sealed thousands of them.</p>
           </div>
           <div className="rt-grid">
             {[
@@ -350,33 +372,12 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══ RECENT WORK — swipeable carousel ═══ */}
-      <section id="projects" className="work-carousel-s">
-        <div className="wrap">
-          <div className="sec-title center rv">
-            <span className="eyebrow">Recent Work</span>
-            <h2>Projects Restored<br />This Year</h2>
-          </div>
-          <div className="work-carousel">
-            <button className="wc-nav wc-prev" onClick={() => scrollGallery(-1)} aria-label="Previous projects" type="button"><i className="fas fa-chevron-left"></i></button>
-            <div className="wc-track" ref={galleryRef}>
-              {projectImages.map((file, i) => (
-                <div key={i} className="wc-slide">
-                  <img src={`https://ik.imagekit.io/qcvroy8xpd/${file}`} alt="Commercial roof coating project" loading="lazy" />
-                </div>
-              ))}
-            </div>
-            <button className="wc-nav wc-next" onClick={() => scrollGallery(1)} aria-label="Next projects" type="button"><i className="fas fa-chevron-right"></i></button>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ CASE STUDY ═══ */}
       <section id="blog" className="case-s">
         <div className="wrap">
           <div className="sec-title center rv">
             <span className="eyebrow eyebrow-light">Case Study</span>
-            <h2 className="h2-light">How One Property Manager<br />Saved <em>$127,000</em></h2>
+            <h2 className="h2-light">How One Smart Property Manager<br />Saved <em>$127,000</em> — In One Phone Call</h2>
           </div>
           <div className="cs-grid">
             <div className="cs-i rv"><div className="cs-lb">Building</div><div className="cs-v">45,000 ft²</div><div className="cs-sub">Commercial office</div></div>
