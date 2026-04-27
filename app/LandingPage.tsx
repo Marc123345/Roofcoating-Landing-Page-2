@@ -69,21 +69,15 @@ export default function LandingPage() {
     return () => io.disconnect();
   }, []);
 
-  // Jotform embed handler — auto-resize iframes
+  const formContainerRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    const jf = document.createElement("script");
-    jf.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
-    jf.async = true;
-    jf.onload = () => {
-      const w = window as unknown as { jotformEmbedHandler?: (sel: string, base: string) => void };
-      if (w.jotformEmbedHandler) {
-        w.jotformEmbedHandler("iframe[id^='JotFormIFrame-']", "https://form.jotform.com/");
-      }
-    };
-    document.body.appendChild(jf);
-    return () => {
-      if (jf.parentNode) jf.parentNode.removeChild(jf);
-    };
+    const container = formContainerRef.current;
+    if (!container) return;
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://form.jotform.com/jsform/261163006523042";
+    container.appendChild(script);
+    return () => { script.remove(); };
   }, []);
 
   const galleryRef = useRef<HTMLDivElement | null>(null);
@@ -190,14 +184,7 @@ export default function LandingPage() {
               <h3>See If Your Roof Qualifies</h3>
               <p>30-second form · Report + quote within 24 hrs</p>
             </div>
-            <iframe
-              id="JotFormIFrame-261093407189057-hero"
-              title="Free Roof Coating Assessment"
-              allow="geolocation; microphone; camera; fullscreen"
-              src="https://form.jotform.com/261093407189057"
-              className="jotform-frame"
-              scrolling="no"
-            ></iframe>
+            <div ref={formContainerRef} />
           </div>
         </div>
         <div className="hero-dots">
