@@ -69,6 +69,31 @@ export default function LandingPage() {
     return () => io.disconnect();
   }, []);
 
+  const [shockVisible, setShockVisible] = useState(false);
+  const [shockCount, setShockCount] = useState(0);
+  const shockRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = shockRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShockVisible(true);
+        const duration = 2000;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const p = Math.min((now - start) / duration, 1);
+          setShockCount(Math.round(p * p * 91));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        io.disconnect();
+      }
+    }, { threshold: 0.3 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   const formContainerRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const container = formContainerRef.current;
@@ -191,6 +216,33 @@ export default function LandingPage() {
           {slides.map((_, i) => (
             <button key={i} className={i === slide ? "active" : ""} onClick={() => setSlide(i)} aria-label={`Go to slide ${i + 1}`} />
           ))}
+        </div>
+      </section>
+
+      {/* ═══ SHOCK STAT ═══ */}
+      <section className="shock-s" ref={shockRef}>
+        <div className="shock-grain" aria-hidden="true" />
+        <div className="wrap shock-wrap">
+          <p className="shock-eyebrow">The Statistic That Changes Everything</p>
+          <div className="shock-counter">
+            <span className="shock-num">{shockCount}</span>
+            <span className="shock-sign">%</span>
+          </div>
+          <div className="shock-bar-track">
+            <div className="shock-bar-fill" style={{ width: shockVisible ? '91%' : '0%' }} />
+            <span className="shock-bar-label">91% of owners</span>
+          </div>
+          <p className="shock-stmt">
+            of commercial roof owners{' '}
+            <strong>don&apos;t know</strong> they can restore
+            <br className="shock-br" />
+            their roof for{' '}
+            <em className="shock-highlight">75% less</em>{' '}
+            than a full replacement.
+          </p>
+          <a href="#contact" className="btn-one shock-cta" onClick={smoothScroll}>
+            <span>Find Out If You Qualify</span>
+          </a>
         </div>
       </section>
 
