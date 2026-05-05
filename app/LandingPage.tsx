@@ -416,7 +416,7 @@ export default function LandingPage() {
               <p>"We were ready to write a check for $189K. They saved us six figures and the roof has been bone dry since. I wish I'd called them first."</p>
               <cite>
                 <strong><i className="fas fa-user-tie" /> Michael Hartman</strong>
-                <span>Property Manager &middot; [City] Commercial Office Park</span>
+                <span>Property Manager &middot; Commercial Office Park</span>
               </cite>
             </div>
           </div>
