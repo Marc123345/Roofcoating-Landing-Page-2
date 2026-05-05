@@ -202,7 +202,7 @@ export default function LandingPage() {
               onLoad={() => window.parent.scrollTo(0, 0)}
               allowTransparency={true}
               allow="geolocation; microphone; camera; fullscreen; payment"
-              src="https://form.jotform.com/261243265404147"
+              src="https://form.jotform.com/261243265404147?isIframeEmbed=1"
               frameBorder={0}
               style={{ minWidth: "100%", maxWidth: "100%", height: 539, border: "none" }}
               scrolling="no"
