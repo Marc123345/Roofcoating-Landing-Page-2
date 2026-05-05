@@ -174,13 +174,15 @@ ul { list-style: none; }
 .hero-grid {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 64px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
 }
-.hero-text { color: #fff; }
+.hero-text { color: #fff; text-align: center; }
+.hero-text p { margin-left: auto; margin-right: auto; }
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -1131,12 +1133,8 @@ ul { list-style: none; }
   .mobile-toggle { display: flex; }
   .mobile-menu { display: block; }
   .about-grid, .qc-grid, .mc-grid { grid-template-columns: 1fr; }
-  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
   .hero { min-height: auto; padding: 80px 0 48px; }
-  .hero-text { text-align: center; }
   .hero-text h1 { font-size: clamp(32px, 6vw, 48px); }
-  .hero-text p { margin-left: auto; margin-right: auto; }
-  .hero-ctas { justify-content: center; }
   .about-imgs { padding-right: 0; padding-bottom: 120px; }
   .process-grid, .services-grid, .team-grid, .blog-grid, .facts-grid, .benefits-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-gallery { grid-template-columns: repeat(3, 1fr); gap: 14px; }

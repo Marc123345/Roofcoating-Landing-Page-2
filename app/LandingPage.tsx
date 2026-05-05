@@ -170,18 +170,6 @@ export default function LandingPage() {
             <div className="hero-eyebrow">Free Commercial Roof Assessment</div>
             <h1>Restore Your Roof for 75% Less<br /><em>with a Roof Coating.</em></h1>
             <p>See if you qualify in 10 seconds &nbsp;→</p>
-            <div className="hero-trust">
-              <div className="ht-stars" aria-hidden="true">
-                <i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" />
-              </div>
-              <div className="ht-facts">
-                <span><strong>4.9 / 5</strong> on Google</span>
-                <span className="ht-sep" />
-                <span><strong>1,200+</strong> Roofs Coated</span>
-                <span className="ht-sep" />
-                <span><strong>20-yr</strong> Warranty</span>
-              </div>
-            </div>
           </div>
           <div className="hero-formbox rv" id="contact">
             <iframe
