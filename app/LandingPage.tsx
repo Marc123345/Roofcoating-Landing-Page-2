@@ -194,6 +194,13 @@ export default function LandingPage() {
           <div className="hero-text rv">
             <h1>Restore Your Roof for 75% Less<br /><em>with a Roof Coating.</em></h1>
             <p>Seal every leak, save 75%, and get a 20-year warranty.</p>
+            <div className="hero-cta-arrow" aria-hidden="true">
+              <span>Fill it out</span>
+              <svg viewBox="0 0 120 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 5 42 C 30 42, 65 5, 112 18" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M 100 7 L 114 19 L 101 31" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </svg>
+            </div>
           </div>
           <div className="hero-formbox rv" id="contact">
             <iframe
