@@ -1154,6 +1154,8 @@ ul { list-style: none; }
   .header-inner { gap: 12px; }
   .header-right .btn-one { display: none; }
   .hero { min-height: auto; padding: 64px 0 36px; }
+  .hero-grid { gap: 20px; }
+  #JotFormIFrame-261243265404147 { height: 480px !important; }
   .hfb-head { padding: 18px 20px 12px; }
   .hfb-head h3 { font-size: 19px; }
   .hero-formbox .jotform-frame { min-height: 620px; }
