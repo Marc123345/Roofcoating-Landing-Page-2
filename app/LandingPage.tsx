@@ -162,9 +162,6 @@ export default function LandingPage() {
               </ul>
             </nav>
             <div className="header-right">
-              <a href="#contact" className="btn-one" onClick={smoothScroll}>
-                <span>See If You Qualify</span>
-              </a>
               <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
                 <span /><span /><span />
               </button>
@@ -207,11 +204,6 @@ export default function LandingPage() {
             </div>
             <div ref={formContainerRef} />
           </div>
-        </div>
-        <div className="hero-dots">
-          {slides.map((_, i) => (
-            <button key={i} className={i === slide ? "active" : ""} onClick={() => setSlide(i)} aria-label={`Go to slide ${i + 1}`} />
-          ))}
         </div>
       </section>
 
@@ -347,9 +339,6 @@ export default function LandingPage() {
                 <p>{b.body}</p>
               </div>
             ))}
-          </div>
-          <div className="center rv" style={{ marginTop: 40 }}>
-            <a href="#contact" className="btn-one" onClick={smoothScroll}><span>Get Your Free Report</span></a>
           </div>
         </div>
       </section>
