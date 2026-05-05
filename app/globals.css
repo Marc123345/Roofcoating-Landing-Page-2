@@ -236,7 +236,7 @@ ul { list-style: none; }
 .hero-formbox::before {
   display: none;
 }
-#JotFormIFrame-261243265404147 { width: 100% !important; min-width: 100% !important; }
+#JotFormIFrame-261243265404147 { width: 100% !important; min-width: 100% !important; height: 539px; }
 .hfb-head {
   background: transparent;
   padding: 0 0 14px;

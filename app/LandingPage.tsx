@@ -180,7 +180,7 @@ export default function LandingPage() {
               allow="geolocation; microphone; camera; fullscreen; payment"
               src="https://form.jotform.com/261243265404147?isIframeEmbed=1"
               frameBorder={0}
-              style={{ minWidth: "100%", maxWidth: "100%", height: 539, border: "none" }}
+              style={{ minWidth: "100%", maxWidth: "100%", border: "none" }}
               scrolling="no"
             />
           </div>
