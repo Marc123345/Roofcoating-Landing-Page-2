@@ -95,13 +95,15 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    const container = document.getElementById("jotform-container");
-    if (!container) return;
-    const script = document.createElement("script");
-    script.src = "https://form.jotform.com/jsform/261243544700045";
-    script.type = "text/javascript";
-    container.appendChild(script);
-    return () => { script.remove(); };
+    const s1 = document.createElement("script");
+    s1.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+    s1.onload = () => {
+      const s2 = document.createElement("script");
+      s2.innerHTML = `window.jotformEmbedHandler("iframe[id='JotFormIFrame-261243265404147']", "https://form.jotform.com/")`;
+      document.body.appendChild(s2);
+    };
+    document.body.appendChild(s1);
+    return () => s1.remove();
   }, []);
 
   const galleryRef = useRef<HTMLDivElement | null>(null);
@@ -170,7 +172,19 @@ export default function LandingPage() {
             <div className="hero-eyebrow">Free Commercial Roof Assessment</div>
             <h1>Restore Your Roof for 75% Less<br /><em>with a Roof Coating.</em></h1>
           </div>
-          <div className="form-embed" id="jotform-container" />
+          <div className="form-embed">
+            <iframe
+              id="JotFormIFrame-261243265404147"
+              title="Roof Coating Deal Request"
+              onLoad={() => window.parent.scrollTo(0, 0)}
+              allowTransparency={true}
+              allow="geolocation; microphone; camera; fullscreen; payment"
+              src="https://form.jotform.com/261243265404147"
+              frameBorder={0}
+              style={{ minWidth: "100%", maxWidth: "100%", height: "539px", border: "none" }}
+              scrolling="no"
+            />
+          </div>
         </div>
       </section>
 
