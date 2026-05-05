@@ -1130,8 +1130,8 @@ ul { list-style: none; }
   .mobile-toggle { display: flex; }
   .mobile-menu { display: block; }
   .about-grid, .qc-grid, .mc-grid { grid-template-columns: 1fr; }
-  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero { min-height: auto; padding: 130px 0 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+  .hero { min-height: auto; padding: 80px 0 48px; }
   .hero-text { text-align: center; }
   .hero-text h1 { font-size: clamp(32px, 6vw, 48px); }
   .hero-text p { margin-left: auto; margin-right: auto; }
@@ -1154,7 +1154,7 @@ ul { list-style: none; }
 @media (max-width: 640px) {
   .header-inner { gap: 12px; }
   .header-right .btn-one { display: none; }
-  .hero { min-height: auto; padding: 100px 0 60px; }
+  .hero { min-height: auto; padding: 64px 0 36px; }
   .hfb-head { padding: 18px 20px 12px; }
   .hfb-head h3 { font-size: 19px; }
   .hero-formbox .jotform-frame { min-height: 620px; }
