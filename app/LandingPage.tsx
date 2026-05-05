@@ -94,14 +94,13 @@ export default function LandingPage() {
     return () => io.disconnect();
   }, []);
 
-  const formContainerRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    const container = formContainerRef.current;
-    if (!container) return;
     const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://form.jotform.com/jsform/261163006523042";
-    container.appendChild(script);
+    script.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+    script.onload = () => {
+      (window as any).jotformEmbedHandler("iframe[id='JotFormIFrame-261243265404147']", "https://form.jotform.com/");
+    };
+    document.body.appendChild(script);
     return () => { script.remove(); };
   }, []);
 
@@ -193,7 +192,7 @@ export default function LandingPage() {
         <div className="hero-overlay" />
         <div className="wrap hero-grid">
           <div className="hero-text rv">
-            <h1>75% Less Than a<br /><em>Full Roof Replacement.</em></h1>
+            <h1>Restore Your Roof for 75% Less<br /><em>with a Roof Coating.</em></h1>
             <p>Seal every leak, save 75%, and get a 20-year warranty.</p>
           </div>
           <div className="hero-formbox rv" id="contact">
@@ -202,7 +201,17 @@ export default function LandingPage() {
               <h3>See If Your Roof Qualifies</h3>
               <p>30-second form · Report + quote within 24 hrs</p>
             </div>
-            <div ref={formContainerRef} />
+            <iframe
+              id="JotFormIFrame-261243265404147"
+              title="Clone of Get Your Roof Coating Deal"
+              onLoad={() => window.parent.scrollTo(0, 0)}
+              allowTransparency={true}
+              allow="geolocation; microphone; camera; fullscreen; payment"
+              src="https://form.jotform.com/261243265404147"
+              frameBorder={0}
+              style={{ minWidth: "100%", maxWidth: "100%", height: 539, border: "none" }}
+              scrolling="no"
+            />
           </div>
         </div>
       </section>
