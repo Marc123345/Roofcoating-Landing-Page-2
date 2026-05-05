@@ -198,9 +198,8 @@ export default function LandingPage() {
           <div className="hero-formbox rv" id="contact">
             <div className="hfb-head">
               <span className="eyebrow">Free Assessment</span>
-              <h3>Stop Replacing. Start Restoring.</h3>
-              <p>Why pay for a full replacement when SPF costs 75% less? Your commercial property could be the perfect candidate for a high-performance restoration.</p>
-              <p style={{ fontWeight: 600, marginTop: 8 }}>Take the 30-Second Qualification Quiz below to see your potential savings.</p>
+              <h3>See If Your Roof Qualifies</h3>
+              <p>30-second form · Report + quote within 24 hrs</p>
             </div>
             <iframe
               id="JotFormIFrame-261243265404147"
