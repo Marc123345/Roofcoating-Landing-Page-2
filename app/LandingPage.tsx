@@ -196,11 +196,6 @@ export default function LandingPage() {
             <p>Seal every leak, save 75%, and get a 20-year warranty.</p>
           </div>
           <div className="hero-formbox rv" id="contact">
-            <div className="hfb-head">
-              <span className="eyebrow">Free Assessment</span>
-              <h3>See If Your Roof Qualifies</h3>
-              <p>30-second form · Report + quote within 24 hrs</p>
-            </div>
             <iframe
               id="JotFormIFrame-261243265404147"
               title="Clone of Get Your Roof Coating Deal"
