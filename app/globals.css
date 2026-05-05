@@ -203,19 +203,18 @@ ul { list-style: none; }
 .hero-content .hero-ctas { justify-content: center; }
 
 .hero-formbox {
-  background: #fff;
-  padding: 4px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
   position: relative;
 }
 .hero-formbox::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--primary); z-index: 2;
+  display: none;
 }
 .hfb-head {
-  background: #fff;
-  padding: 22px 26px 14px;
-  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 0 0 14px;
+  border-bottom: none;
 }
 .hfb-head .eyebrow { margin-bottom: 10px; padding-left: 28px; font-size: 11px; }
 .hfb-head .eyebrow::before { width: 18px; }
