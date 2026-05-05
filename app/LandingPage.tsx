@@ -151,33 +151,8 @@ export default function LandingPage() {
               </span>
               <span className="logo-txt">Roof Coat</span>
             </a>
-            <nav className="main-nav">
-              <ul>
-                {navItems.map((n) => (
-                  <li key={n.href}>
-                    <a href={n.href} onClick={smoothScroll}>{n.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className="header-right">
-              <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-                <span /><span /><span />
-              </button>
-            </div>
           </div>
         </div>
-        {mobileOpen && (
-          <div className="mobile-menu">
-            <ul>
-              {navItems.map((n) => (
-                <li key={n.href}>
-                  <a href={n.href} onClick={smoothScroll}>{n.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </header>
 
       {/* ═══ HERO ═══ */}
@@ -454,66 +429,10 @@ export default function LandingPage() {
 
       {/* ═══ FOOTER ═══ */}
       <footer className="footer">
-        <div className="wrap">
-          <div className="footer-grid">
-            <div className="footer-col">
-              <div className="footer-logo">
-                <span className="logo-mark">
-                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                    <path d="M4 30 L20 10 L36 30" stroke="#fff" strokeWidth="2.5" strokeLinejoin="miter" strokeLinecap="square" />
-                    <line x1="8" y1="23" x2="32" y2="23" stroke="var(--primary)" strokeWidth="3" strokeLinecap="square" />
-                  </svg>
-                </span>
-                <span className="logo-txt">Roof Coat</span>
-              </div>
-              <p>Manufacturer-backed silicone and acrylic coating systems for commercial property owners who'd rather restore than replace.</p>
-              <div className="footer-hours">
-                <h4>Open Hours</h4>
-                <p>Mon – Sat: 7AM – 6PM<br />Sunday: Closed</p>
-              </div>
-            </div>
-
-            <div className="footer-col">
-              <h3>Coating Services</h3>
-              <ul className="footer-links">
-                <li><a href="#">Silicone Roof Coating</a></li>
-                <li><a href="#">Acrylic Roof Coating</a></li>
-                <li><a href="#">Metal Roof Restoration</a></li>
-                <li><a href="#">TPO / EPDM Restoration</a></li>
-                <li><a href="#">Preventative Maintenance</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-col">
-              <h3>Useful Links</h3>
-              <ul className="footer-links">
-                <li><a href="#about" onClick={smoothScroll}>About</a></li>
-                <li><a href="#services" onClick={smoothScroll}>Benefits</a></li>
-                <li><a href="#projects" onClick={smoothScroll}>Recent Projects</a></li>
-                <li><a href="#blog" onClick={smoothScroll}>Insights</a></li>
-                <li><a href="#contact" onClick={smoothScroll}>Contact</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-col">
-              <h3>Subscribe</h3>
-              <p>Monthly coating tips, case studies, and ROI breakdowns for commercial owners.</p>
-              <form className="subscribe-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Email address" required />
-                <button type="submit" aria-label="Subscribe"><i className="fas fa-arrow-right"></i></button>
-              </form>
-            </div>
-          </div>
-        </div>
-
         <div className="footer-bottom">
           <div className="wrap">
             <div className="fb-inner">
               <p>© 2026 Roof Coat. All Rights Reserved.</p>
-              <ul className="fb-links">
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-              </ul>
             </div>
           </div>
         </div>
