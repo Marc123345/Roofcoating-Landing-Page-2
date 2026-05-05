@@ -175,7 +175,6 @@ export default function LandingPage() {
           <div className="hero-text rv">
             <div className="hero-eyebrow">Free Commercial Roof Assessment</div>
             <h1>Restore Your Roof for 75% Less<br /><em>with a Roof Coating.</em></h1>
-            <p>See if you qualify in 10 seconds &nbsp;→</p>
           </div>
           <div className="hero-formbox rv" id="contact">
             <div className="form-embed">
