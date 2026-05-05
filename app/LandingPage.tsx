@@ -194,7 +194,7 @@ export default function LandingPage() {
         <div className="wrap hero-grid">
           <div className="hero-text rv">
             <h1>75% Less Than a<br /><em>Full Roof Replacement.</em></h1>
-            <p>Smart commercial owners are coating, not replacing. Manufacturer-backed silicone seals every leak, slashes cooling bills 25%, and locks in a 20-year warranty — without one tear-off, one dumpster, or one disrupted tenant.</p>
+            <p>Seal every leak, save 75%, and get a 20-year warranty.</p>
           </div>
           <div className="hero-formbox rv" id="contact">
             <div className="hfb-head">
