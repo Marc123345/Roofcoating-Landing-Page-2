@@ -169,12 +169,7 @@ export default function LandingPage() {
           <div className="hero-text rv">
             <div className="hero-eyebrow">Free Commercial Roof Assessment</div>
             <h1>Restore Your Roof for 75% Less<br /><em>with a Roof Coating.</em></h1>
-            <p>Seal every leak, save 75%, and get a 20-year warranty — without a single tear-off.</p>
-            <ul className="hero-checks">
-              <li><i className="fas fa-check" />&nbsp;No tear-off, no dumpsters, no tenant disruption</li>
-              <li><i className="fas fa-check" />&nbsp;Installed in 1–3 days on any flat or low-slope roof</li>
-              <li><i className="fas fa-check" />&nbsp;Manufacturer-backed warranty up to 20 years</li>
-            </ul>
+            <p>See if you qualify in 10 seconds &nbsp;→</p>
             <div className="hero-trust">
               <div className="ht-stars" aria-hidden="true">
                 <i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" />
@@ -186,13 +181,6 @@ export default function LandingPage() {
                 <span className="ht-sep" />
                 <span><strong>20-yr</strong> Warranty</span>
               </div>
-            </div>
-            <div className="hero-cta-arrow" aria-hidden="true">
-              <span>Fill it out</span>
-              <svg viewBox="0 0 120 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 5 42 C 30 42, 65 5, 112 18" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" />
-                <path d="M 100 7 L 114 19 L 101 31" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-              </svg>
             </div>
           </div>
           <div className="hero-formbox rv" id="contact">
